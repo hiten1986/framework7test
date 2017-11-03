@@ -1,0 +1,55 @@
+<!-- We don't need a full layout in this file because this page will be parsed with Ajax. -->
+
+<!-- Top Navbar-->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="#" class="back link">
+                <i class="icon icon-back"></i>
+                <span>Back</span>
+            </a>
+        </div>
+        <div class="center sliding">About</div>
+        <div class="right">
+            <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
+        </div>
+    </div>
+</div>
+<div class="pages">
+    <div class="page" data-page="languages">
+  <div class="page-content">
+    <div class="content-block-title">Frontend</div>
+    <div class="list-block">
+      <ul>
+        <!-- Iterate through frontend languages -->
+        {{#each this.frontend}}
+        <li>
+          <!-- As a context name for this link we pass context path from template7Data root -->
+          <a href="language-details.html" class="item-link item-content" data-context-name="languages.frontend.{{@index}}">
+              <div class="item-inner">
+                <div class="item-title">{{this.name}}</div>
+              </div>
+          </a>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+    <div class="content-block-title">Backend</div>
+    <div class="list-block">
+      <ul>
+        <!-- Iterate through backend languages -->
+        {{#each this.backend}}
+        <li>
+          <!-- As a context name for this link we pass context path from template7Data root -->
+          <a href="language-details.html" class="item-link item-content" data-context-name="languages.backend.{{@index}}">
+              <div class="item-inner">
+                <div class="item-title">{{this.name}}</div>
+              </div>
+          </a>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
